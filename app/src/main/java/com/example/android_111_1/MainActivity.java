@@ -3,34 +3,34 @@ package com.example.android_111_1;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editText;
-    TextView textView1;
+    EditText editText0;
+    EditText editText1;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = (EditText) findViewById(R.id.editTextTextPersonName);
-        textView1 = (TextView) findViewById(R.id.textView1);
+        editText0 = (EditText) findViewById(R.id.editTextTextPersonName);
+        editText1 = (EditText) findViewById(R.id.editTextTextPassword);
+        textView = (TextView) findViewById(R.id.textView2);
     }
 
     public void button_click(View V) {
-        String editText_content = editText.getText().toString();
-        if (editText_content.equals("abc")) {
-            textView1.setText("總統好");
-        }
-        else if (editText_content.equals("def")) {
-            textView1.setText("校長好");
+        String account = editText0.getText().toString();
+        String password = editText1.getText().toString();
+
+        if (account.equals("admin") && password.equals("123")) {
+            textView.setText("Login Success");
         }
         else {
-            textView1.setText("你好，" + editText_content);
+            textView.setText("Login Failed");
         }
     }
 
